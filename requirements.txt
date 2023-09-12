@@ -7,3 +7,5 @@ bentoml
 nltk
 fastapi
 uvicorn[standard]
+pyarrow
+fastparquet
