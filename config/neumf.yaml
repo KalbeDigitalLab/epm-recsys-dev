@@ -15,7 +15,7 @@ load_col:
 # model config
 mf_embedding_size: 32
 mlp_embedding_size: 32
-mlp_hidden_size: [256, 128, 64, 32]
+mlp_hidden_size: [64, 32, 16, 8]
 dropout_prob: 0.1
 mf_train: True
 mlp_train: True
@@ -26,9 +26,9 @@ mlp_pretrain_path: None
 # Training and evaluation config
 epochs: 600
 learner: adam
-learning_rate: 0.0001
-train_batch_size: 16384
-eval_batch_size: 16384
+learning_rate: 0.001
+train_batch_size: 4096
+eval_batch_size: 4096
 stopping_step: 10
 train_neg_sample_args:
     distribution: uniform
@@ -40,8 +40,8 @@ eval_args:
     group_by: user
     order: RO
     split: {'RS': [0.8,0.1,0.1]}
-    mode: full
-metrics: ['Recall', 'MRR', 'NDCG', 'Hit', 'Precision']
+    mode: uni100
+metrics: ['AUC', 'MAE', 'RMSE', 'LogLoss']
 topk: 10
-valid_metric: MRR@10
+valid_metric: RMSE
 metric_decimal_place: 4
