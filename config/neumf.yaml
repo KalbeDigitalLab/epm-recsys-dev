@@ -4,7 +4,7 @@ worker: 16
 seed: 2020
 checkpoint_dir: 'saved/'
 log_wandb: True
-wandb_project: 'new-ncf-rank'
+wandb_project: 'ncf-epm'
 
 # dataset config : General Recommendation
 USER_ID_FIELD: user_id
