@@ -152,6 +152,11 @@ class NeuMF(GeneralRecommender):
         user = interaction[self.USER_ID]
         item = interaction[self.ITEM_ID]
         predict = self.sigmoid(self.forward(user, item))
+        print(f"predict var: {predict}")
+        
+        threshold = 0.5
+        predict_labels = (predict >= threshold).float()
+        print(f"predict labels: {predict_labels}")
         return predict
 
     def dump_parameters(self):
